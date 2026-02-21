@@ -1,0 +1,12 @@
+# agent-sh
+> Open-source tools for autonomous AI agent workflows
+
+## Products
+- agentsys: Marketplace and installer for AI agent workflow plugins
+- agnix: Agent configuration linter with 229 rules
+- web-ctl: Browser interaction skill for AI agents (coming soon)
+
+## Documentation
+- /agentsys/ - agentsys docs
+- /agnix/ - agnix docs
+- /skills/ - Agent Skills catalog
