@@ -1,5 +1,5 @@
 # agent-sh
-> Open-source tools for autonomous AI agent workflows
+> The ecosystem for AI agent tooling
 
 ## Products
 - agentsys: Marketplace and installer for AI agent workflow plugins
