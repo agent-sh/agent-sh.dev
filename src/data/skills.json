@@ -29,7 +29,7 @@
   { "name": "consult-tool", "plugin": "consult", "description": "Cross-tool AI consultation for second opinions", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "audit-review", "plugin": "audit-project", "description": "Multi-domain code review with specialized agents", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "debate", "plugin": "debate", "description": "Structured multi-round debates between AI tools with evidence-backed arguments", "platforms": ["Claude Code", "OpenCode", "Codex"] },
-  { "name": "maintain-cross-platform", "plugin": "agent-core", "description": "Meta-skill for maintaining 3-platform architecture across releases", "platforms": ["Claude Code", "OpenCode", "Codex"] },
+
   { "name": "web-auth", "plugin": "web-ctl", "description": "Authenticate to websites with human-in-the-loop browser handoff for login, 2FA, and CAPTCHAs", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "web-browse", "plugin": "web-ctl", "description": "Headless browser control for navigating and interacting with web pages", "platforms": ["Claude Code", "OpenCode", "Codex"] }
 ]
