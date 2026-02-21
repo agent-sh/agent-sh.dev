@@ -1,0 +1,101 @@
+---
+const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname;
+function isActive(path: string) {
+  const full = base + path;
+  return currentPath === full || currentPath === full + '/';
+}
+---
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href={base} class="nav__logo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#nav-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <defs><linearGradient id="nav-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+      </svg>
+      <span>agent-sh</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <button class="nav__link nav__dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          Products
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M3 5l3 3 3-3"/></svg>
+        </button>
+        <div class="nav__dropdown-menu">
+          <a href="https://agent-sh.github.io/agentsys/" class="nav__dropdown-item" target="_blank" rel="noopener noreferrer">
+            <strong>agentsys</strong>
+            <span>Agent runtime & orchestration</span>
+          </a>
+          <a href="https://agent-sh.github.io/agnix/" class="nav__dropdown-item" target="_blank" rel="noopener noreferrer">
+            <strong>agnix</strong>
+            <span>Agent config linter</span>
+          </a>
+          <a href="https://github.com/agent-sh/web-ctl" class="nav__dropdown-item nav__dropdown-item--soon" target="_blank" rel="noopener noreferrer">
+            <strong>web-ctl</strong>
+            <span>Browser automation (coming soon)</span>
+          </a>
+        </div>
+      </div>
+      <a href={`${base}plugins/`} class:list={["nav__link", { "nav__link--active": isActive('plugins') }]}>Plugins</a>
+      <a href={`${base}skills/`} class:list={["nav__link", { "nav__link--active": isActive('skills') }]}>Skills</a>
+    </div>
+    <a href="https://github.com/agent-sh" class="nav__cta" target="_blank" rel="noopener noreferrer" aria-label="agent-sh on GitHub">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <span>GitHub</span>
+    </a>
+    <button class="nav__hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobile-overlay"></div>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href={base} class="mobile-menu__link">Home</a>
+  <a href="https://agent-sh.github.io/agentsys/" class="mobile-menu__link" target="_blank" rel="noopener noreferrer">agentsys</a>
+  <a href="https://agent-sh.github.io/agnix/" class="mobile-menu__link" target="_blank" rel="noopener noreferrer">agnix</a>
+  <a href={`${base}plugins/`} class="mobile-menu__link">Plugins</a>
+  <a href={`${base}skills/`} class="mobile-menu__link">Skills</a>
+  <a href="https://github.com/agent-sh" class="mobile-menu__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+<script>
+  const hamburger = document.getElementById('nav-hamburger');
+  const overlay = document.getElementById('mobile-overlay');
+  const menu = document.getElementById('mobile-menu');
+  const nav = document.getElementById('nav');
+  function toggleMenu() {
+    const open = menu?.classList.toggle('open');
+    overlay?.classList.toggle('open');
+    hamburger?.classList.toggle('open');
+    hamburger?.setAttribute('aria-expanded', String(!!open));
+    menu?.setAttribute('aria-hidden', String(!open));
+  }
+  hamburger?.addEventListener('click', toggleMenu);
+  overlay?.addEventListener('click', toggleMenu);
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', toggleMenu));
+
+  // Nav bg on scroll
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        nav?.classList.toggle('nav--scrolled', window.scrollY > 40);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Dropdown
+  const trigger = document.querySelector('.nav__dropdown-trigger');
+  const dropdown = document.querySelector('.nav__dropdown');
+  trigger?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const expanded = trigger.getAttribute('aria-expanded') === 'true';
+    trigger.setAttribute('aria-expanded', String(!expanded));
+    dropdown?.classList.toggle('open');
+  });
+  document.addEventListener('click', () => {
+    trigger?.setAttribute('aria-expanded', 'false');
+    dropdown?.classList.remove('open');
+  });
+</script>

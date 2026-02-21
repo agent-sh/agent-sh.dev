@@ -1,0 +1,146 @@
+[
+  {
+    "name": "next-task",
+    "description": "Task to production. 12-phase pipeline: discovery, exploration, planning, implementation, review, and shipping.",
+    "category": "workflow",
+    "agents": 8,
+    "skills": 3,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/next-task",
+    "install": "agentsys install next-task",
+    "dependencies": []
+  },
+  {
+    "name": "ship",
+    "description": "Branch to merged PR in one command. Commits, pushes, creates PR, monitors CI, addresses reviewer comments, merges.",
+    "category": "workflow",
+    "agents": 3,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/ship",
+    "install": "agentsys install ship",
+    "dependencies": []
+  },
+  {
+    "name": "agnix",
+    "description": "Lint agent configurations with 229 validation rules across 10+ AI tools. SARIF output for GitHub Code Scanning.",
+    "category": "quality",
+    "agents": 1,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/agnix",
+    "install": "agentsys install agnix",
+    "dependencies": []
+  },
+  {
+    "name": "deslop",
+    "description": "Kill AI slop before it ships. 3-phase detection pipeline finds debug statements, placeholder text, verbose comments.",
+    "category": "quality",
+    "agents": 2,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/deslop",
+    "install": "agentsys install deslop",
+    "dependencies": []
+  },
+  {
+    "name": "enhance",
+    "description": "Seven parallel analyzers check prompts, agents, plugins, docs, hooks, and skills. Certainty-graded findings.",
+    "category": "quality",
+    "agents": 7,
+    "skills": 8,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/enhance",
+    "install": "agentsys install enhance",
+    "dependencies": []
+  },
+  {
+    "name": "perf",
+    "description": "Evidence-backed performance investigation. 10-phase methodology with baselines, profiling, and controlled experiments.",
+    "category": "research",
+    "agents": 6,
+    "skills": 7,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/perf",
+    "install": "agentsys install perf",
+    "dependencies": []
+  },
+  {
+    "name": "drift-detect",
+    "description": "AST-based plan vs code analysis. JavaScript collectors + single Opus call. 77% token reduction vs multi-agent approaches.",
+    "category": "quality",
+    "agents": 1,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/drift-detect",
+    "install": "agentsys install drift-detect",
+    "dependencies": ["repo-map"]
+  },
+  {
+    "name": "audit-project",
+    "description": "Multi-agent code review. Up to 10 specialized agents review security, performance, architecture, and more.",
+    "category": "quality",
+    "agents": 10,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/audit-project",
+    "install": "agentsys install audit-project",
+    "dependencies": []
+  },
+  {
+    "name": "repo-map",
+    "description": "AST symbol and import mapping. Cached file-to-symbols map via ast-grep used by drift-detect and planners.",
+    "category": "infrastructure",
+    "agents": 1,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/repo-map",
+    "install": "agentsys install repo-map",
+    "dependencies": []
+  },
+  {
+    "name": "sync-docs",
+    "description": "Keep docs in sync with code. Finds outdated references, stale examples, missing CHANGELOG entries.",
+    "category": "quality",
+    "agents": 1,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/sync-docs",
+    "install": "agentsys install sync-docs",
+    "dependencies": []
+  },
+  {
+    "name": "learn",
+    "description": "Research any topic online. Progressive discovery gathers 10-40 sources, scores quality, creates structured guides with RAG index.",
+    "category": "research",
+    "agents": 1,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/learn",
+    "install": "agentsys install learn",
+    "dependencies": []
+  },
+  {
+    "name": "consult",
+    "description": "Cross-tool AI consultation. Ask Gemini, Codex, Claude, OpenCode, or Copilot for a second opinion on any question.",
+    "category": "research",
+    "agents": 1,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/consult",
+    "install": "agentsys install consult",
+    "dependencies": []
+  },
+  {
+    "name": "web-ctl",
+    "description": "Browser automation and web testing toolkit for AI agents. Coming soon.",
+    "category": "infrastructure",
+    "agents": 0,
+    "skills": 0,
+    "commands": 0,
+    "repo": "https://github.com/agent-sh/web-ctl",
+    "install": "",
+    "dependencies": [],
+    "comingSoon": true
+  }
+]

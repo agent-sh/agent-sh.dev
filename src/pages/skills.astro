@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/tokens.css';
+import '../styles/main.css';
+import skills from '../data/skills.json';
+---
+<Base title="Skills Directory -- agent-sh" description="All 28 skills across 13 plugins in the agent-sh ecosystem.">
+  <Nav />
+  <main>
+    <div class="page-header">
+      <div class="page-header__inner">
+        <h1 class="section-title">Skills Directory</h1>
+        <p class="section-subtitle">28 skills across 13 plugins. Reusable implementation blocks invoked by agents.</p>
+      </div>
+    </div>
+
+    <section class="skills-section">
+      <div class="skills-section__inner">
+        <div class="skills-table-wrap">
+          <table class="skills-table">
+            <thead>
+              <tr>
+                <th>Skill</th>
+                <th>Plugin</th>
+                <th>Description</th>
+                <th>Platforms</th>
+              </tr>
+            </thead>
+            <tbody>
+              {skills.map(skill => (
+                <tr>
+                  <td class="skill-name">{skill.name}</td>
+                  <td class="plugin-name">{skill.plugin}</td>
+                  <td>{skill.description}</td>
+                  <td>
+                    {skill.platforms.map(p => (
+                      <span class="platform-badge">{p}</span>
+                    ))}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

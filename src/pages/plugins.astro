@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/tokens.css';
+import '../styles/main.css';
+import plugins from '../data/plugins.json';
+
+const categories = [...new Set(plugins.map(p => p.category))];
+---
+<Base title="Plugin Catalog -- agent-sh" description="Browse all 13 plugins in the agent-sh ecosystem. Install individually or as a bundle.">
+  <Nav />
+  <main>
+    <div class="page-header">
+      <div class="page-header__inner">
+        <h1 class="section-title">Plugin Catalog</h1>
+        <p class="section-subtitle">13 plugins. Install what you need. Each works standalone.</p>
+      </div>
+    </div>
+
+    <section class="catalog">
+      <div class="catalog__inner">
+        <div class="catalog__filters">
+          <button class="filter-btn filter-btn--active" data-filter="all">All</button>
+          {categories.map(cat => (
+            <button class="filter-btn" data-filter={cat}>{cat}</button>
+          ))}
+        </div>
+        <div class="catalog__grid">
+          {plugins.map(plugin => (
+            <a href={plugin.repo} class="plugin-card" data-category={plugin.category} target="_blank" rel="noopener noreferrer">
+              <div class="plugin-card__header">
+                <span class="plugin-card__name">{plugin.name}</span>
+                <span class={`plugin-card__category cat-${plugin.category}`}>{plugin.category}</span>
+              </div>
+              <p class="plugin-card__desc">{plugin.description}</p>
+              {!plugin.comingSoon && (
+                <div class="plugin-card__meta">
+                  <span>{plugin.agents} agents</span>
+                  <span>{plugin.skills} skills</span>
+                  <span>{plugin.commands} cmd</span>
+                </div>
+              )}
+              {plugin.dependencies && plugin.dependencies.length > 0 && (
+                <div class="plugin-card__deps"><strong>requires:</strong> {plugin.dependencies.join(', ')}</div>
+              )}
+              {plugin.comingSoon ? (
+                <span class="plugin-card__soon">Coming Soon</span>
+              ) : (
+                <div class="plugin-card__install"><code>{plugin.install}</code></div>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = (btn as HTMLElement).dataset.filter;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('filter-btn--active'));
+        btn.classList.add('filter-btn--active');
+        document.querySelectorAll('.plugin-card').forEach(card => {
+          const el = card as HTMLElement;
+          if (filter === 'all' || el.dataset.category === filter) {
+            el.dataset.hidden = 'false';
+            el.style.display = '';
+          } else {
+            el.dataset.hidden = 'true';
+            el.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</Base>

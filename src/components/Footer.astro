@@ -1,0 +1,33 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__name">agent-sh</span>
+      <span class="footer__tagline">Modular tools for AI-powered development</span>
+      <span class="footer__license">MIT License</span>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-title">Products</span>
+      <a href="https://agent-sh.github.io/agentsys/" target="_blank" rel="noopener noreferrer">agentsys</a>
+      <a href="https://agent-sh.github.io/agnix/" target="_blank" rel="noopener noreferrer">agnix</a>
+      <a href="https://github.com/agent-sh/web-ctl" target="_blank" rel="noopener noreferrer">web-ctl</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-title">Resources</span>
+      <a href={`${base}plugins/`}>Plugin Catalog</a>
+      <a href={`${base}skills/`}>Skills Directory</a>
+      <a href="https://github.com/agent-sh" target="_blank" rel="noopener noreferrer">GitHub Org</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-title">Community</span>
+      <a href="https://github.com/agent-sh/agentsys/discussions" target="_blank" rel="noopener noreferrer">Discussions</a>
+      <a href="https://github.com/agent-sh/agentsys/issues" target="_blank" rel="noopener noreferrer">Issues</a>
+      <a href="https://www.npmjs.com/package/agentsys" target="_blank" rel="noopener noreferrer">npm</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>Made by <a href="https://github.com/avifenesh" target="_blank" rel="noopener noreferrer">Avi Fenesh</a></span>
+  </div>
+</footer>
