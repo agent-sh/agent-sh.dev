@@ -522,6 +522,25 @@
 }
 .copy-btn svg { width: 14px; height: 14px; }
 .copy-btn.copied svg { display: none; }
+
+.quick-start__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+.quick-start__alt {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+.quick-start__alt code {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--color-accent-cyan);
+}
 .copy-btn.copied::after { content: '\\2713'; font-size: 14px; }
 
 /* --- PHILOSOPHY --- */

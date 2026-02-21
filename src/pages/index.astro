@@ -98,45 +98,44 @@ const stats = [
       </div>
     </section>
 
-    <!-- Quick Start -->
+    <!-- Get Started -->
     <section class="quick-start" id="install">
       <div class="quick-start__inner">
         <div class="section-header">
-          <h2 class="section-title reveal" data-delay="0">Get Started in 30 Seconds</h2>
+          <h2 class="section-title reveal" data-delay="0">Get Started</h2>
+          <p class="section-subtitle reveal" data-delay="100">Pick a tool. Install in one command.</p>
         </div>
         <div class="quick-start__tabs reveal" data-delay="100">
-          <button class="quick-start__tab quick-start__tab--active" data-tab="claude">Claude Code</button>
-          <button class="quick-start__tab" data-tab="npm">npm</button>
-          <button class="quick-start__tab" data-tab="manual">Manual</button>
+          <button class="quick-start__tab quick-start__tab--active" data-tab="agentsys">agentsys</button>
+          <button class="quick-start__tab" data-tab="agnix">agnix</button>
+          <button class="quick-start__tab" data-tab="webctl">web-ctl</button>
         </div>
-        <div class="quick-start__panel quick-start__panel--active" data-panel="claude">
-          <div class="code-block">
-            <button class="copy-btn" data-code="/plugin marketplace add agent-sh/agentsys&#10;/plugin install next-task@agentsys&#10;/plugin install ship@agentsys" aria-label="Copy code">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"/></svg>
-            </button>
-            <pre><span class="prompt">$</span> /plugin marketplace add agent-sh/agentsys
-<span class="prompt">$</span> /plugin install next-task@agentsys
-<span class="prompt">$</span> /plugin install ship@agentsys</pre>
-          </div>
-        </div>
-        <div class="quick-start__panel" data-panel="npm">
+        <div class="quick-start__panel quick-start__panel--active" data-panel="agentsys">
+          <p class="quick-start__desc">Workflow orchestration — 13 plugins, 42 agents, 28 skills.</p>
           <div class="code-block">
             <button class="copy-btn" data-code="npm install -g agentsys && agentsys" aria-label="Copy code">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"/></svg>
             </button>
             <pre><span class="prompt">$</span> npm install -g agentsys && agentsys</pre>
           </div>
-          <p style="margin-top: var(--space-3); font-size: var(--text-sm); color: var(--color-text-muted);">Interactive installer for Claude Code, OpenCode, and Codex CLI.</p>
+          <p class="quick-start__alt">Or in Claude Code: <code>/plugin marketplace add agent-sh/agentsys</code></p>
         </div>
-        <div class="quick-start__panel" data-panel="manual">
+        <div class="quick-start__panel" data-panel="agnix">
+          <p class="quick-start__desc">Agent config linter — 229 rules across 10+ AI tools.</p>
           <div class="code-block">
-            <button class="copy-btn" data-code="git clone https://github.com/agent-sh/agentsys.git&#10;cd agentsys&#10;npm install" aria-label="Copy code">
+            <button class="copy-btn" data-code="npx agnix ." aria-label="Copy code">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"/></svg>
             </button>
-            <pre><span class="prompt">$</span> git clone https://github.com/agent-sh/agentsys.git
-<span class="prompt">$</span> cd agentsys
-<span class="prompt">$</span> npm install</pre>
+            <pre><span class="prompt">$</span> npx agnix .</pre>
           </div>
+          <p class="quick-start__alt">Also: <code>cargo install agnix</code> or <code>brew install agent-sh/agnix/agnix</code></p>
+        </div>
+        <div class="quick-start__panel" data-panel="webctl">
+          <p class="quick-start__desc">Browser automation for AI agents — Playwright-based, no MCP overhead.</p>
+          <div class="code-block" style="opacity: 0.5;">
+            <pre><span class="prompt">$</span> agentsys install web-ctl</pre>
+          </div>
+          <p class="quick-start__alt" style="color: var(--color-text-muted);">Coming soon. <a href="https://github.com/agent-sh/web-ctl" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-cyan);">Follow progress</a></p>
         </div>
       </div>
     </section>
