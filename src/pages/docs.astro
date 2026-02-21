@@ -1,0 +1,111 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/tokens.css';
+import '../styles/main.css';
+import pluginsData from '../data/plugins.json';
+import skillsData from '../data/skills.json';
+
+const base = import.meta.env.BASE_URL;
+const pluginCount = pluginsData.length;
+const skillCount = skillsData.length;
+
+const docSites = [
+  {
+    name: "agentsys",
+    description: "Agent runtime and orchestration system. Installation, plugin development, cross-platform compatibility, and API reference.",
+    url: "https://agent-sh.github.io/agentsys/",
+    badge: "Flagship",
+    badgeClass: "product-card__badge--flagship"
+  },
+  {
+    name: "agnix",
+    description: "Agent config linter. Rule reference, SARIF integration, WASM playground, and custom rule development.",
+    url: "https://agent-sh.github.io/agnix/",
+    badge: "Tool",
+    badgeClass: "product-card__badge--tool"
+  },
+  {
+    name: "web-ctl",
+    description: "Browser automation toolkit. Session management, authentication handoff, headless navigation, and selector reference.",
+    url: "https://github.com/agent-sh/web-ctl",
+    badge: "Tool",
+    badgeClass: "product-card__badge--tool"
+  }
+];
+
+const resources = [
+  { name: "Plugin Catalog", description: `Browse all ${pluginCount} plugins with install commands`, url: `${base}plugins/` },
+  { name: "Skills Directory", description: `${skillCount} skills across the ecosystem`, url: `${base}skills/` },
+  { name: "GitHub Org", description: "Source code, issues, and discussions", url: "https://github.com/agent-sh" }
+];
+---
+<Base title="Documentation - agent-sh" description="Documentation hub for the agent-sh ecosystem. Find docs for agentsys, agnix, web-ctl, and all plugins.">
+  <Nav />
+  <main>
+    <div class="page-header">
+      <div class="page-header__inner">
+        <h1 class="section-title">Documentation</h1>
+        <p class="section-subtitle">Find docs for every product in the agent-sh ecosystem.</p>
+      </div>
+    </div>
+
+    <section class="catalog">
+      <div class="catalog__inner">
+        <h2 class="section-title docs-section-heading">Product Documentation</h2>
+        <div class="catalog__grid">
+          {docSites.map(site => (
+            <a href={site.url} class="plugin-card" target="_blank" rel="noopener noreferrer">
+              <div class="plugin-card__header">
+                <span class="plugin-card__name">{site.name}</span>
+                <span class={`product-card__badge ${site.badgeClass} docs-badge`}>{site.badge}</span>
+              </div>
+              <p class="plugin-card__desc">{site.description}</p>
+              <span class="visually-hidden"> (opens in new tab)</span>
+            </a>
+          ))}
+        </div>
+
+        <h2 class="section-title docs-section-heading docs-section-heading--spaced">Resources</h2>
+        <div class="catalog__grid">
+          {resources.map(r => (
+            <a href={r.url} class="plugin-card" target={r.url.startsWith('http') ? '_blank' : undefined} rel={r.url.startsWith('http') ? 'noopener noreferrer' : undefined}>
+              <div class="plugin-card__header">
+                <span class="plugin-card__name">{r.name}</span>
+              </div>
+              <p class="plugin-card__desc">{r.description}</p>
+              {r.url.startsWith('http') && <span class="visually-hidden"> (opens in new tab)</span>}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  .docs-section-heading {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-lg);
+  }
+  .docs-section-heading--spaced {
+    margin-top: var(--space-2xl);
+  }
+  .docs-badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

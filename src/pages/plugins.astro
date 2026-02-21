@@ -8,13 +8,13 @@ import plugins from '../data/plugins.json';
 
 const categories = [...new Set(plugins.map(p => p.category))];
 ---
-<Base title="Plugin Catalog -- agent-sh" description="Browse all 13 plugins in the agent-sh ecosystem. Install individually or as a bundle.">
+<Base title="Plugin Catalog - agent-sh" description={`Browse all ${plugins.length} plugins in the agent-sh ecosystem. Install individually or as a bundle.`}>
   <Nav />
   <main>
     <div class="page-header">
       <div class="page-header__inner">
         <h1 class="section-title">Plugin Catalog</h1>
-        <p class="section-subtitle">13 plugins. Install what you need. Each works standalone.</p>
+        <p class="section-subtitle">{plugins.length} plugins. Install what you need. Each works standalone.</p>
       </div>
     </div>
 
