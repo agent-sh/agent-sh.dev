@@ -313,9 +313,12 @@
 }
 .products__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
   margin-top: var(--space-10);
+}
+@media (max-width: 900px) {
+  .products__grid { grid-template-columns: 1fr; }
 }
 .product-card {
   background: rgba(255, 255, 255, 0.03);
@@ -324,7 +327,8 @@
   padding: var(--space-8);
   transition: all 0.3s ease;
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
 }
@@ -378,7 +382,8 @@
   font-family: var(--font-mono);
 }
 .product-card__install {
-  margin-top: var(--space-4);
+  margin-top: auto;
+  padding-top: var(--space-4);
   background: var(--color-bg-code);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-default);
@@ -529,9 +534,15 @@
 }
 .philosophy__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
   margin-top: var(--space-10);
+}
+@media (max-width: 900px) {
+  .philosophy__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .philosophy__grid { grid-template-columns: 1fr; }
 }
 .philosophy__card {
   background: rgba(255, 255, 255, 0.03);
@@ -718,14 +729,22 @@
 }
 .catalog__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
+}
+@media (max-width: 900px) {
+  .catalog__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .catalog__grid { grid-template-columns: 1fr; }
 }
 .plugin-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
   transition: all 0.25s ease;
   text-decoration: none;
   display: flex;
