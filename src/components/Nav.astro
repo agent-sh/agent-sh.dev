@@ -36,6 +36,7 @@ function isActive(path: string) {
           </a>
         </div>
       </div>
+      <a href={`${base}docs/`} class:list={["nav__link", { "nav__link--active": isActive('docs') }]}>Docs</a>
       <a href={`${base}plugins/`} class:list={["nav__link", { "nav__link--active": isActive('plugins') }]}>Plugins</a>
       <a href={`${base}skills/`} class:list={["nav__link", { "nav__link--active": isActive('skills') }]}>Skills</a>
     </div>
@@ -53,6 +54,7 @@ function isActive(path: string) {
   <a href={base} class="mobile-menu__link">Home</a>
   <a href="https://agent-sh.github.io/agentsys/" class="mobile-menu__link" target="_blank" rel="noopener noreferrer">agentsys</a>
   <a href="https://agent-sh.github.io/agnix/" class="mobile-menu__link" target="_blank" rel="noopener noreferrer">agnix</a>
+  <a href={`${base}docs/`} class="mobile-menu__link">Docs</a>
   <a href={`${base}plugins/`} class="mobile-menu__link">Plugins</a>
   <a href={`${base}skills/`} class="mobile-menu__link">Skills</a>
   <a href="https://github.com/agent-sh" class="mobile-menu__link" target="_blank" rel="noopener noreferrer">GitHub</a>
