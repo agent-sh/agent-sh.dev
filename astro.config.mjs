@@ -3,5 +3,5 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://agent-sh.github.io',
-  base: '/',
+  base: '/agent-sh.dev/',
 });
