@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "tasks": [
+    {
+      "id": "2",
+      "source": "agent-sh/agent-sh.dev",
+      "title": "Org Architecture: Documentation & Website Strategy",
+      "branch": "feature/org-docs-strategy-2",
+      "worktreePath": "/home/ubuntu/agent-sh/worktrees/org-docs-strategy-2",
+      "claimedAt": "2026-02-22T00:00:00Z",
+      "claimedBy": "worktree-manager",
+      "status": "claimed",
+      "lastActivityAt": "2026-02-22T00:00:00Z"
+    }
+  ]
+}
