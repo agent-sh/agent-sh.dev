@@ -1,0 +1,13 @@
+severity = "Warning"
+exclude = ["node_modules/**", ".git/**", "dist/**", ".next/**"]
+target = "ClaudeCode"
+tools = []
+locale = "en"
+
+[rules]
+
+disabled_rules = []
+
+[tool_versions]
+
+[spec_revisions]
