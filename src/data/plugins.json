@@ -74,7 +74,7 @@
     "commands": 1,
     "repo": "https://github.com/agent-sh/drift-detect",
     "install": "agentsys install drift-detect",
-    "dependencies": ["repo-map"]
+    "dependencies": ["repo-intel"]
   },
   {
     "name": "audit-project",
@@ -88,14 +88,14 @@
     "dependencies": []
   },
   {
-    "name": "repo-map",
-    "description": "AST symbol and import mapping. Cached file-to-symbols map via ast-grep used by drift-detect and planners.",
+    "name": "repo-intel",
+    "description": "Unified static analysis via agent-analyzer. Git history, AST symbols, project metadata, and doc-code sync in one cached artifact.",
     "category": "infrastructure",
     "agents": 1,
     "skills": 1,
     "commands": 1,
-    "repo": "https://github.com/agent-sh/repo-map",
-    "install": "agentsys install repo-map",
+    "repo": "https://github.com/agent-sh/repo-intel",
+    "install": "agentsys install repo-intel",
     "dependencies": []
   },
   {
