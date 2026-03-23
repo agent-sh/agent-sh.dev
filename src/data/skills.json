@@ -21,7 +21,7 @@
   { "name": "perf-analyzer", "plugin": "perf", "description": "Deep performance analysis combining all profiling data", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "deslop", "plugin": "deslop", "description": "Detect and clean AI-generated slop patterns in code", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "drift-analysis", "plugin": "drift-detect", "description": "Compare documented plans against actual implementation", "platforms": ["Claude Code", "OpenCode", "Codex"] },
-  { "name": "repo-mapping", "plugin": "repo-map", "description": "Build AST-based symbol and import map of codebase", "platforms": ["Claude Code", "OpenCode", "Codex"] },
+  { "name": "repo-intel", "plugin": "repo-intel", "description": "Unified static analysis - git history, AST symbols, project metadata", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "sync-docs", "plugin": "sync-docs", "description": "Find and fix documentation drift from source code", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "learn-topic", "plugin": "learn", "description": "Research topics online and create structured learning guides", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "agnix-lint", "plugin": "agnix", "description": "Validate agent configs with 230 rules across AI tools", "platforms": ["Claude Code", "OpenCode", "Codex", "Cursor"] },
