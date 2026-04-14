@@ -24,7 +24,7 @@
   { "name": "repo-intel", "plugin": "repo-intel", "description": "Unified static analysis - git history, AST symbols, project metadata", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "sync-docs", "plugin": "sync-docs", "description": "Find and fix documentation drift from source code", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "learn-topic", "plugin": "learn", "description": "Research topics online and create structured learning guides", "platforms": ["Claude Code", "OpenCode", "Codex"] },
-  { "name": "agnix-lint", "plugin": "agnix", "description": "Validate agent configs with 230 rules across AI tools", "platforms": ["Claude Code", "OpenCode", "Codex", "Cursor"] },
+  { "name": "agnix-lint", "plugin": "agnix", "description": "Validate agent configs with 399 rules across AI tools", "platforms": ["Claude Code", "OpenCode", "Codex", "Cursor"] },
   { "name": "ship-pr", "plugin": "ship", "description": "Full PR lifecycle: create, monitor CI, address reviews, merge", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "consult-tool", "plugin": "consult", "description": "Cross-tool AI consultation for second opinions", "platforms": ["Claude Code", "OpenCode", "Codex"] },
   { "name": "audit-review", "plugin": "audit-project", "description": "Multi-domain code review with specialized agents", "platforms": ["Claude Code", "OpenCode", "Codex"] },
