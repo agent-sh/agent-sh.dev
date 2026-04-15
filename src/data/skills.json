@@ -32,5 +32,17 @@
   { "name": "debate", "plugin": "debate", "description": "Structured multi-round debates between AI tools with evidence-backed arguments", "platforms": ["Claude Code", "OpenCode", "Codex"] },
 
   { "name": "web-auth", "plugin": "web-ctl", "description": "Authenticate to websites with human-in-the-loop browser handoff for login, 2FA, and CAPTCHAs", "platforms": ["Claude Code", "OpenCode", "Codex"] },
-  { "name": "web-browse", "plugin": "web-ctl", "description": "Headless browser control for navigating and interacting with web pages", "platforms": ["Claude Code", "OpenCode", "Codex"] }
+  { "name": "web-browse", "plugin": "web-ctl", "description": "Headless browser control for navigating and interacting with web pages", "platforms": ["Claude Code", "OpenCode", "Codex"] },
+
+  { "name": "recommend", "plugin": "skillers", "description": "Suggest skills, hooks, and agents to automate recurring patterns from transcripts", "platforms": ["Claude Code", "OpenCode", "Codex"] },
+  { "name": "skillers-compact", "plugin": "skillers", "description": "Compact workflow transcripts into themed knowledge weighted by frequency", "platforms": ["Claude Code", "OpenCode", "Codex"] },
+
+  { "name": "onboard", "plugin": "onboard", "description": "Guided codebase tour from pre-collected project data with tech stack, key files, and active areas", "platforms": ["Claude Code", "OpenCode", "Codex"] },
+  { "name": "can-i-help", "plugin": "can-i-help", "description": "Match contributor skills to project needs using repo-intel signals, test gaps, and doc drift", "platforms": ["Claude Code", "OpenCode", "Codex"] },
+
+  { "name": "audit-project", "plugin": "audit-project", "description": "Multi-agent code review with role-based reviewers and iterative improvement", "platforms": ["Claude Code", "OpenCode", "Codex"] },
+
+  { "name": "glide-mq", "plugin": "glidemq", "description": "Greenfield queue development with glide-mq: workers, ordering, rate limiting, flows, step jobs", "platforms": ["Claude Code", "OpenCode", "Codex"] },
+  { "name": "glide-mq-migrate-bullmq", "plugin": "glidemq", "description": "Migrate BullMQ applications to glide-mq with API mapping and breaking changes", "platforms": ["Claude Code", "OpenCode", "Codex"] },
+  { "name": "glide-mq-migrate-bee", "plugin": "glidemq", "description": "Migrate Bee-Queue applications to glide-mq with chained-builder to options-object conversion", "platforms": ["Claude Code", "OpenCode", "Codex"] }
 ]

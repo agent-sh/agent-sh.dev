@@ -82,7 +82,7 @@
     "category": "quality",
     "agents": 10,
     "agents_type": "role-based",
-    "skills": 0,
+    "skills": 1,
     "commands": 3,
     "repo": "https://github.com/agent-sh/audit-project",
     "install": "agentsys install audit-project",
@@ -152,6 +152,72 @@
     "commands": 1,
     "repo": "https://github.com/agent-sh/web-ctl",
     "install": "agentsys install web-ctl",
+    "dependencies": []
+  },
+  {
+    "name": "prepare-delivery",
+    "description": "Pre-ship quality gates: deslop, simplify, agnix, enhance, review loop, delivery validation, and docs sync. Runs all checks but does not create PRs or push.",
+    "category": "workflow",
+    "agents": 3,
+    "skills": 4,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/prepare-delivery",
+    "install": "agentsys install prepare-delivery",
+    "dependencies": ["deslop", "enhance", "sync-docs"]
+  },
+  {
+    "name": "gate-and-ship",
+    "description": "Composite workflow that chains /prepare-delivery then /ship in one command. No agents or skills of its own.",
+    "category": "workflow",
+    "agents": 0,
+    "skills": 0,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/gate-and-ship",
+    "install": "agentsys install gate-and-ship",
+    "dependencies": ["prepare-delivery", "ship"]
+  },
+  {
+    "name": "skillers",
+    "description": "Learn from your workflow patterns and suggest skills, hooks, and agents to automate repetitive work. Reads Claude Code, Codex, and OpenCode transcripts.",
+    "category": "quality",
+    "agents": 2,
+    "skills": 2,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/skillers",
+    "install": "agentsys install skillers",
+    "dependencies": []
+  },
+  {
+    "name": "onboard",
+    "description": "Onboard to any codebase - collects project data then guides an interactive tour with tech stack summary, key files, and active areas.",
+    "category": "quality",
+    "agents": 1,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/onboard",
+    "install": "agentsys install onboard",
+    "dependencies": ["repo-intel"]
+  },
+  {
+    "name": "can-i-help",
+    "description": "Find where to contribute to a project. Matches developer skills to project needs using repo-intel data, test gaps, doc drift, open issues, and bugspots.",
+    "category": "quality",
+    "agents": 1,
+    "skills": 1,
+    "commands": 1,
+    "repo": "https://github.com/agent-sh/can-i-help",
+    "install": "agentsys install can-i-help",
+    "dependencies": ["repo-intel"]
+  },
+  {
+    "name": "glidemq",
+    "description": "Skills-only plugin for building message queues with glide-mq: greenfield queue development plus migration guides from BullMQ and Bee-Queue.",
+    "category": "infrastructure",
+    "agents": 0,
+    "skills": 3,
+    "commands": 0,
+    "repo": "https://github.com/agent-sh/glidemq",
+    "install": "agentsys install glidemq",
     "dependencies": []
   }
 ]
