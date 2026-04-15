@@ -78,11 +78,12 @@
   },
   {
     "name": "audit-project",
-    "description": "Multi-agent code review. Up to 10 specialized role-based agents review security, performance, architecture, and more.",
+    "description": "Multi-agent code review with up to 10 role-based specialists across security, performance, architecture, API, frontend, backend, DevOps, and test-quality.",
     "category": "quality",
     "agents": 10,
-    "skills": 1,
-    "commands": 1,
+    "agents_type": "role-based",
+    "skills": 0,
+    "commands": 3,
     "repo": "https://github.com/agent-sh/audit-project",
     "install": "agentsys install audit-project",
     "dependencies": []
