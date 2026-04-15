@@ -1,9 +1,23 @@
 #!/bin/sh
 # Pre-push hook for Node.js projects
-# Runs tests before allowing push
+# Runs tests before allowing push. Falls back to build if no test script.
 
 cd "$(git rev-parse --show-toplevel)" || exit 1
 
-echo "[INFO] Running pre-push tests..."
-npm test
-exit $?
+if [ ! -f package.json ]; then
+  echo "[INFO] No package.json - skipping pre-push checks"
+  exit 0
+fi
+
+if node -e "const p=require('./package.json'); process.exit(p.scripts && p.scripts.test ? 0 : 1)" 2>/dev/null; then
+  echo "[INFO] Running pre-push tests..."
+  npm test
+  exit $?
+elif node -e "const p=require('./package.json'); process.exit(p.scripts && p.scripts.build ? 0 : 1)" 2>/dev/null; then
+  echo "[INFO] No test script - running pre-push build..."
+  npm run build
+  exit $?
+else
+  echo "[INFO] No test or build script - skipping pre-push checks"
+  exit 0
+fi

@@ -78,7 +78,7 @@
   },
   {
     "name": "audit-project",
-    "description": "Multi-agent code review. Up to 10 role-based specialists (code-quality, security, performance, architecture, database, API, frontend, backend, DevOps, test-quality) spawned dynamically - not file-based agents. These are the same 10 role-based agents counted in the agentsys ecosystem total.",
+    "description": "Multi-agent code review with up to 10 role-based specialists across security, performance, architecture, API, frontend, backend, DevOps, and test-quality.",
     "category": "quality",
     "agents": 10,
     "agents_type": "role-based",
