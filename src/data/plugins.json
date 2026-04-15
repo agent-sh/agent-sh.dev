@@ -156,7 +156,7 @@
   },
   {
     "name": "prepare-delivery",
-    "description": "Pre-ship quality gates: deslop, agnix, enhance, review loop, delivery validation, and docs sync. Runs all checks but does not create PRs or push.",
+    "description": "Pre-ship quality gates: deslop, agnix, enhance, review loop, delivery validation, docs sync, and /simplify when the user has it installed. Runs all checks but does not create PRs or push.",
     "category": "workflow",
     "agents": 3,
     "skills": 4,
