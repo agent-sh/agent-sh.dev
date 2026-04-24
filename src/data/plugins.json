@@ -90,9 +90,9 @@
   },
   {
     "name": "repo-intel",
-    "description": "Unified static analysis via agent-analyzer. Git history, AST symbols, project metadata, and doc-code sync in one cached artifact.",
+    "description": "Unified static analysis via agent-analyzer: git history, AST symbols, project metadata, doc-code sync, plus optional Haiku-augmented file descriptors and a 3-depth narrative summary for fast first-foothold in unfamiliar repos.",
     "category": "infrastructure",
-    "agents": 1,
+    "agents": 3,
     "skills": 1,
     "commands": 1,
     "repo": "https://github.com/agent-sh/repo-intel",
