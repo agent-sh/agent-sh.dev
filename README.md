@@ -1,14 +1,16 @@
 # agent-sh.dev
 
-Landing site for the agent-sh organization. Static Astro 5 site deployed to `agent-sh.github.io`.
+Landing site for the agent-sh organization. Static Astro 7 site deployed to `agent-sh.github.io/agent-sh.dev/`.
 
 ## Structure
 
 ```
 .
 ├── ORG_ARCHITECTURE.md   Architecture decision record
-├── astro.config.mjs      Site config (base: /)
-├── public/               Static assets
+├── agent-knowledge/      Submodule: agent-sh/agent-knowledge
+├── astro.config.mjs      Site config (base: /agent-sh.dev/)
+├── public/               Static assets and llms.txt
+├── scripts/              Git pre-push hook setup
 └── src/
     ├── components/
     │   ├── Nav.astro     Top navigation with Products dropdown
@@ -24,7 +26,8 @@ Landing site for the agent-sh organization. Static Astro 5 site deployed to `age
     │   ├── plugins.astro Plugin catalog with filters
     │   └── skills.astro  Skills directory with search
     └── styles/
-        ├── tokens.css    Design tokens (canonical source for all sites)
+        ├── design-system/ Shared design tokens and base styles (canonical source for all sites)
+        ├── tokens.css    Imports the design-system tokens
         └── main.css      Site styles
 ```
 
@@ -33,12 +36,12 @@ Landing site for the agent-sh organization. Static Astro 5 site deployed to `age
 | Command             | Action                                      |
 | :------------------ | :------------------------------------------ |
 | `npm install`       | Install dependencies                        |
-| `npm run dev`       | Start local dev server at localhost:4321    |
+| `npm run dev`       | Start local dev server at localhost:4321/agent-sh.dev/ |
 | `npm run build`     | Build production site to ./dist/            |
 | `npm run preview`   | Preview build locally before deploying      |
 
 ## Deployment
 
-Deployed to GitHub Pages via `.github/workflows/deploy.yml`. Base path is `/`.
+Deployed to GitHub Pages via `.github/workflows/deploy.yml`. Base path is `/agent-sh.dev/`.
 
 See [ORG_ARCHITECTURE.md](./ORG_ARCHITECTURE.md) for the full architecture decision record covering URL structure, frameworks, design tokens, and future work.
